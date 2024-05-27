@@ -17,4 +17,13 @@ sources:
                 period: hour
               warn_after:
                 count: 12
-                period: hour         
+                period: hour 
+
+models:
+  - name: stg_customer
+    columns:
+      - name: customer_id
+        tests:
+          - unique
+          - not_null
+                     

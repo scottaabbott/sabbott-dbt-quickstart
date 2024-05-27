@@ -1,4 +1,4 @@
-with customers as 
+with customer as 
 (
     select
             id              as customer_id,
@@ -8,4 +8,4 @@ with customers as
     from    {{ source('jaffle_shop', 'customers') }}
 )
 
-select * from customers
+select * from customer
