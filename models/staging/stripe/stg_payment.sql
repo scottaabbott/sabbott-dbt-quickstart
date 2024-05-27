@@ -8,7 +8,8 @@ with
                 p.amount,
                 p.created
 
-        from    raw.stripe.payment AS p
+        from    {{ source('stripe', 'payment') }} as p
+
     )
 
 select * from payments
