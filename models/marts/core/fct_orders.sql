@@ -1,3 +1,10 @@
+{{
+    config
+    (
+        materialized="view"
+    )
+}}
+
 with
     orders as
     (
@@ -20,4 +27,4 @@ with
         on          o.order_id = p.order_id
     )
 
-    select * from fct_orders
+select * from fct_orders
