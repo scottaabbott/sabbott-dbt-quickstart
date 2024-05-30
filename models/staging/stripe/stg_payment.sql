@@ -1,14 +1,15 @@
 with
     payments as 
     (
-        select  p.id            as payment_id,
-                p.orderid       as order_id,
-                p.paymentmethod,
-                p.status,
-                p.amount,
-                p.created
+        select  id            as payment_id,
+                orderid       as order_id,
+                paymentmethod as payment_method,
+                status,
+                -- amount is stored in cents, convert it to dollars
+                amount / 100  as amount,
+                created       as created_at
 
-        from    {{ source('stripe', 'payment') }} as p
+        from    {{ source('stripe', 'payment') }}
 
     )
 

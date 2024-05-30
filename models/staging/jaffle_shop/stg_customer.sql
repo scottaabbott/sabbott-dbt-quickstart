@@ -1,10 +1,3 @@
-{{
-    config
-    (
-        materialized="ephemeral"
-    )
-}}
-
 with customer as 
 (
     select
